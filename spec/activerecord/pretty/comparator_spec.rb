@@ -73,7 +73,6 @@ RSpec.describe Activerecord::Pretty::Comparator do
       end
     end
 
-    # https://github.com/rails/rails/pull/39863/files#diff-fba6d35ef65b69650470b26fbf8e945446b6bb92c543e944015908a9fe200d62R101-R106
     describe "datetime precision" do
       let(:time) { Time.utc(2014, 8, 17, 12, 30, 0, 999_999) }
 
@@ -89,7 +88,6 @@ RSpec.describe Activerecord::Pretty::Comparator do
       end
     end
 
-    # https://github.com/rails/rails/pull/39863/files#diff-12d007e9c2419aa48cfd2003590590870871d40704fe22cb85a2bf9d56e0b307R95-R100
     describe "time precision" do
       let(:time) { Time.utc(2000, 1, 1, 12, 30, 0, 999_999) }
 
