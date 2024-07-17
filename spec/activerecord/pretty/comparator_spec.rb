@@ -2,7 +2,7 @@
 
 RSpec.describe Activerecord::Pretty::Comparator do
   it "has a version number" do
-    expect(Activerecord::Pretty::Comparator::VERSION).not_to be nil
+    expect(Activerecord::Pretty::Comparator::VERSION).not_to be_nil
   end
 
   describe "simple Post Model" do
