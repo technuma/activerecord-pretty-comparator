@@ -5,8 +5,8 @@ require_relative "lib/activerecord/pretty/comparator/version"
 Gem::Specification.new do |spec|
   spec.name = "activerecord-pretty-comparator"
   spec.version = Activerecord::Pretty::Comparator::VERSION
-  spec.authors = ["technuma"]
-  spec.email = ["technuma@gmail.com"]
+  spec.authors = ["Kazuya Onuma", "Ryuta Kamizono"]
+  spec.email = ["technuma@gmail.com", "kamipo@gmail.com"]
 
   spec.summary = "A simple ActiveRecord extension to support where with comparison operators (`>`, `>=`, `<`, and `<=`)."
   spec.description = "A simple ActiveRecord extension to support where with comparison operators (`>`, `>=`, `<`, and `<=`)."
