@@ -98,9 +98,9 @@ PLATFORMS
 DEPENDENCIES
   activerecord-pretty-comparator!
   database_cleaner
-  rake (~> 13.0)
-  rspec (~> 3.0)
-  rubocop (~> 1.21)
+  rake
+  rspec
+  rubocop
   rubocop-rspec
   sqlite3 (~> 1.4)
 
