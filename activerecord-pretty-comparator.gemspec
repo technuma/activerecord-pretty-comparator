@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "lib/activerecord/pretty/comparator/version"
+require_relative "lib/active_record/pretty/comparator/version"
 
 Gem::Specification.new do |spec|
   spec.name = "activerecord-pretty-comparator"
