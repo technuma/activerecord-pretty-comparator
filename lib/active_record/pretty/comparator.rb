@@ -3,7 +3,7 @@
 require_relative "comparator/version"
 require "active_record"
 
-module Activerecord
+module ActiveRecord
   module Pretty
     # :nodoc:
     module Comparator

@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "lib/activerecord/pretty/comparator/version"
+require_relative "lib/active_record/pretty/comparator/version"
 
 Gem::Specification.new do |spec|
   spec.name = "activerecord-pretty-comparator"
-  spec.version = Activerecord::Pretty::Comparator::VERSION
+  spec.version = ActiveRecord::Pretty::Comparator::VERSION
   spec.authors = ["Kazuya Onuma", "Ryuta Kamizono"]
   spec.email = ["technuma@gmail.com", "kamipo@gmail.com"]
 

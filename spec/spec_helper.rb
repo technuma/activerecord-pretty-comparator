@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "activerecord/pretty/comparator"
+require "active_record/pretty/comparator"
 
 require "database_cleaner"
 

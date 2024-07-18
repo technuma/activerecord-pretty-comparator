@@ -3,6 +3,10 @@ AllCops:
   TargetRubyVersion: 3.0
   Exclude:
     - 'activerecord-pretty-comparator.gemspec'
+    - 'lib/activerecord-pretty-comparator.rb'
+    - 'vendor/**/*'
+  RespectGitIgnore: true
+  SuggestExtensions: false
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes

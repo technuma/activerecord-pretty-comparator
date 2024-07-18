@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-RSpec.describe Activerecord::Pretty::Comparator do
+RSpec.describe ActiveRecord::Pretty::Comparator do
   it "has a version number" do
-    expect(Activerecord::Pretty::Comparator::VERSION).not_to be_nil
+    expect(ActiveRecord::Pretty::Comparator::VERSION).not_to be_nil
   end
 
   describe "simple Post Model" do
