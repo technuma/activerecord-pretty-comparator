@@ -4,7 +4,7 @@ require_relative "lib/activerecord/pretty/comparator/version"
 
 Gem::Specification.new do |spec|
   spec.name = "activerecord-pretty-comparator"
-  spec.version = Activerecord::Pretty::Comparator::VERSION
+  spec.version = ActiveRecord::Pretty::Comparator::VERSION
   spec.authors = ["Kazuya Onuma", "Ryuta Kamizono"]
   spec.email = ["technuma@gmail.com", "kamipo@gmail.com"]
 
