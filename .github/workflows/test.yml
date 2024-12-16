@@ -3,44 +3,33 @@ name: Test
 on:
   push:
     branches:
-    - main
+      - main
   pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Test on Rails ${{ matrix.rails_version }} and Ruby ${{ matrix.ruby_version }}
+    name: Test on ${{ matrix.activerecord_version }} and Ruby ${{ matrix.ruby_version }}
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - rails_version: ~> 7.2.0
-            ruby_version: '3.3'
-            sqlite_version: ~> 2.0
-          - rails_version: ~> 7.2.0
-            ruby_version: '3.2'
-            sqlite_version: ~> 2.0
-          - rails_version: ~> 7.2.0
-            ruby_version: '3.1'
-            sqlite_version: ~> 2.0
-          - rails_version: ~> 7.1.0
-            ruby_version: '3.3'
-            sqlite_version: ~> 1.0
-          - rails_version: ~> 7.0.0
-            ruby_version: '3.2'
-            sqlite_version: ~> 1.0
-          - rails_version: ~> 6.1.0
-            ruby_version: '3.0'
-            sqlite_version: ~> 1.0
-    env:
-      RAILS_VERSION: ${{ matrix.rails_version }}
-      SQLITE_VERSION: ${{ matrix.sqlite_version }}
+        ruby_version:
+          - "3.3"
+          - "3.2"
+          - "3.1"
+        activerecord_version:
+          - "activerecord_7.2"
+          - "activerecord_7.1"
+          - "activerecord_7.0"
+          - "activerecord_6.1"
     steps:
-    - uses: actions/checkout@v4
-    - uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: ${{ matrix.ruby_version }}
-    - name: Bundle install
-      run: bundle install
-    - name: Test
-      run: bundle exec rake
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby_version }}
+      - name: Bundle install
+        run: bundle install
+      - name: Setup activerecord
+        run: bundle exec appraisal install
+      - name: Test with ${{ matrix.activerecord_version }}
+        run: bundle exec appraisal ${{ matrix.activerecord_version }} rspec

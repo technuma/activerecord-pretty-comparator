@@ -59,7 +59,13 @@ RSpec.describe ActiveRecord::Pretty::Comparator do
 
       it "merges with a post condition" do
         expect(Post.where("id <=": post2.id).merge(Post.where(id: post2.id))).to eq([post2])
-        expect(Post.where(id: post2.id).merge(Post.where("id <=": post2.id))).to eq([post1, post2])
+
+        # See https://github.com/rails/rails/commit/515aa1e
+        if ActiveRecord.version >= Gem::Version.new('7.0')
+          expect(Post.where(id: post2.id).merge(Post.where("id <=": post2.id))).to eq([post1, post2])
+        else
+          expect(Post.where(id: post2.id).merge(Post.where("id <=": post2.id))).to eq([post2])
+        end
       end
     end
 
