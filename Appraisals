@@ -1,12 +1,14 @@
-appraise "activerecord_6.1" do
-  gem "activerecord", "~> 6.1.0"
-  gem "sqlite3", "~> 1.4"
+if RUBY_VERSION < "4.0"
+  appraise "activerecord_6.1" do
+    gem "activerecord", "~> 6.1.0"
+    gem "sqlite3", "~> 1.4"
 
-  gem "database_cleaner"
-  gem "rake"
-  gem "rspec"
-  gem "rubocop"
-  gem "rubocop-rspec"
+    gem "database_cleaner"
+    gem "rake"
+    gem "rspec"
+    gem "rubocop"
+    gem "rubocop-rspec"
+  end
 end
 
 appraise "activerecord_7.0" do
