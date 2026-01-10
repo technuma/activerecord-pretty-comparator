@@ -53,4 +53,15 @@ if RUBY_VERSION >= "3.2"
     gem "rubocop"
     gem "rubocop-rspec"
   end
+
+  appraise "activerecord_8.1" do
+    gem "activerecord", "~> 8.1.0"
+    gem "sqlite3"
+
+    gem "database_cleaner"
+    gem "rake"
+    gem "rspec"
+    gem "rubocop"
+    gem "rubocop-rspec"
+  end
 end
