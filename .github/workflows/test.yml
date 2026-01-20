@@ -14,11 +14,13 @@ jobs:
       fail-fast: false
       matrix:
         ruby_version:
+          - "4.0"
           - "3.4"
           - "3.3"
           - "3.2"
           - "3.1"
         activerecord_version:
+          - "activerecord_8.1"
           - "activerecord_8.0"
           - "activerecord_7.2"
           - "activerecord_7.1"
@@ -27,6 +29,10 @@ jobs:
         exclude:
           - ruby_version: "3.1"
             activerecord_version: "activerecord_8.0"
+          - ruby_version: "3.1"
+            activerecord_version: "activerecord_8.1"
+          - ruby_version: "4.0"
+            activerecord_version: "activerecord_6.1"
 
     steps:
       - uses: actions/checkout@v4
